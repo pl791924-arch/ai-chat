@@ -2,13 +2,70 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Web AI</title>
+<title>Web AI Chat</title>
+
+<style>
+body{
+font-family: Arial;
+background:#1e1e1e;
+color:white;
+display:flex;
+flex-direction:column;
+align-items:center;
+margin:0;
+}
+
+#chatbox{
+width:90%;
+max-width:600px;
+height:400px;
+background:#2b2b2b;
+margin-top:20px;
+padding:10px;
+overflow-y:auto;
+border-radius:10px;
+}
+
+#inputArea{
+margin-top:10px;
+}
+
+input{
+padding:10px;
+width:300px;
+}
+
+button{
+padding:10px;
+}
+</style>
+
 </head>
 
 <body>
 
-<h1>Web của mình chạy rồi!</h1>
-<p>Nếu thấy dòng này nghĩa là GitHub Pages hoạt động.</p>
+<h1>AI Chat</h1>
+
+<div id="chatbox"></div>
+
+<div id="inputArea">
+<input id="msg" placeholder="Nhập tin nhắn...">
+<button onclick="send()">Gửi</button>
+</div>
+
+<script>
+function send(){
+let input=document.getElementById("msg");
+let chat=document.getElementById("chatbox");
+
+let text=input.value;
+
+chat.innerHTML += "<p><b>Bạn:</b> "+text+"</p>";
+chat.innerHTML += "<p><b>AI:</b> Tôi chưa có não nhưng chào bạn =))</p>";
+
+input.value="";
+}
+</script>
 
 </body>
-</html>
+  </html>
